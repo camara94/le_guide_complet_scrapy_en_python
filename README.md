@@ -44,3 +44,12 @@ Exemple:
 * **-t**: est l'option qui nous permet d'indiquer le template
 
 ![image](images/4.png)
+
+## Crawl Spider
+
+Concentrons-nous sur **Crawl Spider**:
+
+* **name**: nous indique le nom de compilation de la classe
+* **allow_domains**: nous les domains à scraper ou analyser
+* **start_urls**: les urls de demarrages
+* **rules**: contient les classes **LinkExtractor**
