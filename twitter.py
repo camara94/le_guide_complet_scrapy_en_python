@@ -3,8 +3,11 @@ import scrapy
 
 class TwitterSpider(scrapy.Spider):
     name = 'twitter'
-    allowed_domains = ['twitter.com']
-    start_urls = ['http://twitter.com/']
+    allowed_domains = ['youtube.com']
+    start_urls = [
+        'https://www.youtube.com/results?search_query=reseaux+convolution']
 
     def parse(self, response):
-        pass
+
+        comments = response.css("#dismissible")
+        print(f'Comment: {len(comments)}')
