@@ -11,3 +11,5 @@ Pour afficher les differents types de projet scrapy
     scrapy genspider -l
 </code>
 </pre>
+
+![image](images/1.png)
