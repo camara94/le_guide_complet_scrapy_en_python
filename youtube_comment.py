@@ -5,16 +5,29 @@ from scrapy.spiders import CrawlSpider, Rule
 
 class YoutubeCommentSpider(CrawlSpider):
     name = 'youtube_comment'
-    allowed_domains = ['youtube.com']
-    start_urls = ['http://youtube.com/']
+    allowed_domains = ['jumia.com.tn']
+    start_urls = [
+        'https://www.jumia.com.tn'
+    ]
+
+    commentaitre_detail = LinkExtractor(restrict_css='article > a')
+
+    commenttairres = Rule(
+        commentaitre_detail,
+        callback='parse_item',
+        follow=False
+    ),
 
     rules = (
-        Rule(LinkExtractor(allow=r'Items/'), callback='parse_item', follow=True),
+        commenttairres
     )
 
     def parse_item(self, response):
-        item = {}
-        #item['domain_id'] = response.xpath('//input[@id="sid"]/@value').get()
-        #item['name'] = response.xpath('//div[@id="name"]').get()
-        #item['description'] = response.xpath('//div[@id="description"]').get()
-        return item
+        yield {
+            'titre': response.css("h1.-fs20::text").get(),
+            'prix': response.css('span.-b::text').get(),
+            'pourcentage': response.css('span.tag::text').get(),
+            'image': response.css('a.itm>img').attrib['data-src'],
+            'temps_restant': response.css('time::text').get(),
+            'lien': response.url
+        }
