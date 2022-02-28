@@ -28,3 +28,5 @@ Exemple:
 
 * **twitter**: indique ici qu'on veut générer un projet du nom de twitter
 *  **twitter.com**: indique ici qu'on veut récupérer les données à partir de twitter.com
+
+![image](images/2.png)
