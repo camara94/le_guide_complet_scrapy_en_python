@@ -30,3 +30,15 @@ Exemple:
 *  **twitter.com**: indique ici qu'on veut récupérer les données à partir de twitter.com
 
 ![image](images/2.png)
+
+## Créer Un Projet Avec Un Template Spécifique
+
+Exemple:
+
+<pre>
+<code>
+    scrapy genspider -t crawl youtube_comment youtube.com
+</code>
+</pre>
+
+* **-t**: est l'option qui nous permet d'indiquer le template
