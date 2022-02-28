@@ -42,3 +42,5 @@ Exemple:
 </pre>
 
 * **-t**: est l'option qui nous permet d'indiquer le template
+
+![image](images/4.png)
